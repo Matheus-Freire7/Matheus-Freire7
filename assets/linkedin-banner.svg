@@ -1,0 +1,117 @@
+<svg width="1200" height="180" viewBox="0 0 1200 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0221"/>
+      <stop offset="45%" stop-color="#1a0b3d"/>
+      <stop offset="100%" stop-color="#0b1a3a"/>
+    </linearGradient>
+
+    <linearGradient id="neonText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#a855ff"/>
+      <stop offset="100%" stop-color="#ff2bd6"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="frame">
+      <rect x="0" y="0" width="1200" height="180" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- background -->
+    <rect width="1200" height="180" fill="url(#bg)"/>
+
+    <!-- perspective cyber grid floor -->
+    <g stroke="#3d2b6b" stroke-width="1" opacity="0.55">
+      <line x1="0" y1="180" x2="500" y2="60"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="3.2s" repeatCount="indefinite"/></line>
+      <line x1="120" y1="180" x2="540" y2="60"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="3.2s" repeatCount="indefinite"/></line>
+      <line x1="260" y1="180" x2="590" y2="60"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="3.6s" repeatCount="indefinite"/></line>
+      <line x1="420" y1="180" x2="650" y2="60"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="3.6s" repeatCount="indefinite"/></line>
+      <line x1="600" y1="180" x2="600" y2="60"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="4s" repeatCount="indefinite"/></line>
+      <line x1="780" y1="180" x2="550" y2="60"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="3.6s" repeatCount="indefinite"/></line>
+      <line x1="940" y1="180" x2="610" y2="60"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="3.6s" repeatCount="indefinite"/></line>
+      <line x1="1080" y1="180" x2="660" y2="60"><animate attributeName="opacity" values="0.6;0.25;0.6" dur="3.2s" repeatCount="indefinite"/></line>
+      <line x1="1200" y1="180" x2="700" y2="60"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="3.2s" repeatCount="indefinite"/></line>
+
+      <line x1="0" y1="150" x2="1200" y2="150" opacity="0.35"/>
+      <line x1="60" y1="120" x2="1140" y2="120" opacity="0.3"/>
+      <line x1="180" y1="95" x2="1020" y2="95" opacity="0.25"/>
+      <line x1="300" y1="75" x2="900" y2="75" opacity="0.2"/>
+    </g>
+
+    <!-- moving scanline sweep -->
+    <rect x="0" y="-40" width="1200" height="40" fill="#00f0ff" opacity="0.06">
+      <animate attributeName="y" values="-40;220" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- thin static scanlines -->
+    <g fill="#ffffff" opacity="0.035">
+      <rect x="0" y="10" width="1200" height="1"/>
+      <rect x="0" y="26" width="1200" height="1"/>
+      <rect x="0" y="42" width="1200" height="1"/>
+      <rect x="0" y="58" width="1200" height="1"/>
+      <rect x="0" y="74" width="1200" height="1"/>
+      <rect x="0" y="90" width="1200" height="1"/>
+      <rect x="0" y="106" width="1200" height="1"/>
+      <rect x="0" y="122" width="1200" height="1"/>
+      <rect x="0" y="138" width="1200" height="1"/>
+      <rect x="0" y="154" width="1200" height="1"/>
+      <rect x="0" y="170" width="1200" height="1"/>
+    </g>
+
+    <!-- neon border -->
+    <rect x="4" y="4" width="1192" height="172" rx="12" fill="none" stroke="url(#neonText)" stroke-width="2" opacity="0.8" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- corner brackets, gamer HUD style -->
+    <g stroke="#00f0ff" stroke-width="3" fill="none" filter="url(#softGlow)">
+      <path d="M20,16 L20,36 M20,16 L40,16"/>
+      <path d="M1180,16 L1180,36 M1180,16 L1160,16"/>
+      <path d="M20,164 L20,144 M20,164 L40,164"/>
+      <path d="M1180,164 L1180,144 M1180,164 L1160,164"/>
+    </g>
+
+    <!-- main title with glitch flicker -->
+    <text x="600" y="88" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="bold" fill="url(#neonText)" filter="url(#glow)" letter-spacing="2">
+      &gt; CONECTE-SE COMIGO NO LINKEDIN
+      <animate attributeName="opacity" values="1;1;0.75;1;1;0.85;1" dur="2.8s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- glitch offset ghost layers -->
+    <text x="602" y="88" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#ff2bd6" opacity="0.25" letter-spacing="2">
+      &gt; CONECTE-SE COMIGO NO LINKEDIN
+      <animate attributeName="x" values="602;598;602;603;602" dur="2.8s" repeatCount="indefinite"/>
+    </text>
+    <text x="598" y="88" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="bold" fill="#00f0ff" opacity="0.25" letter-spacing="2">
+      &gt; CONECTE-SE COMIGO NO LINKEDIN
+      <animate attributeName="x" values="598;602;598;597;598" dur="2.8s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- subtitle -->
+    <text x="600" y="122" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="15" fill="#8be9ff" opacity="0.85" letter-spacing="2">
+      [ vamos trocar uma ideia sobre c&#243;digo ]
+    </text>
+
+    <!-- blinking cursor -->
+    <rect x="905" y="108" width="10" height="18">
+      <animate attributeName="fill" values="#00f0ff;#00f0ff;transparent;transparent" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
